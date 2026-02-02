@@ -1,0 +1,54 @@
+[build-system]
+requires = ['setuptools', 'setuptools-scm']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = 'ziplus'
+description = 'Lightweight US ZIP code lookup library'
+license = 'MIT'
+requires-python = '>=3.14'
+dynamic = ['version']
+authors = [
+    { name = 'Leonard Buskin', email = 'leonardbuskin@gmail.com' },
+]
+classifiers = [
+    'Development Status :: 4 - Beta',
+    'Intended Audience :: Developers',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.14',
+]
+
+[project.optional-dependencies]
+dev = ['pytest', 'pytest-cov', 'ruff', 'setuptools-scm', 'ty']
+
+[tool.setuptools]
+packages = ['ziplus']
+
+[tool.setuptools.package-data]
+ziplus = ['zipcodes.json.gz']
+
+[tool.setuptools_scm]
+
+[tool.ruff]
+line-length = 180
+
+[tool.ruff.lint]
+select = ['ALL']
+ignore = ['COM812', 'D203', 'D213', 'Q000', 'Q003']
+
+[tool.ruff.lint.per-file-ignores]
+'tests/*' = ['ANN', 'D', 'INP001', 'PLC0415', 'PT011', 'S101', 'SLF001']
+'scripts/*' = ['D', 'INP001']
+
+[tool.ruff.lint.isort]
+lines-between-types = 1
+
+[tool.ruff.format]
+quote-style = 'single'
+
+[tool.ty.environment]
+python-version = '3.14'
+
+[tool.pytest.ini_options]
+testpaths = ['tests']

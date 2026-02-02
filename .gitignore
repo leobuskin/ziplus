@@ -1,0 +1,16 @@
+ziplus/zipcodes.json
+__pycache__/
+*.py[cod]
+*.so
+build/
+dist/
+*.egg-info/
+*.egg
+.venv/
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.idea/
