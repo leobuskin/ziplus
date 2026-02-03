@@ -1,0 +1,1 @@
+GeoNames US (2026-02-02) [http://download.geonames.org/export/zip/US.zip]
